@@ -39,6 +39,17 @@ let displayLoadLessonWord = (lessonWords) => {
     let cartContainer = document.getElementById("cart-container")
     cartContainer.innerHTML = "";
 
+    if (lessonWords.length == 0) {
+        cartContainer.innerHTML = `
+        <div class="py-7 col-span-full">
+                    <img class="mx-auto block" src="./assets/image 1.png" alt="">
+                    <p class="text-center text-sm mt-4">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
+                    <h2 class="text-center text-4xl font-semibold mt-5">নেক্সট Lesson এ যান</h2>
+                </div>
+        `
+        return;
+    }
+
     for (let lessonWord of lessonWords) {
 
         let div = document.createElement("div");
